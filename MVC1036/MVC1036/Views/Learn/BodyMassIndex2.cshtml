@@ -1,0 +1,9 @@
+﻿@model MVC1036.Models.Person
+
+@using (Html.BeginForm()) {
+    <p>Your name: @Html.TextBoxFor(x => x.Name)</p>
+    <p>Your weight: @Html.TextBoxFor(x => x.Weight)</p>
+    <p>Your height: @Html.TextBoxFor(x => x.Height)</p>
+    <p>Vaccination status: @Html.CheckBoxFor(x => x.Vaccinated)</p>
+    <p><input type="submit" value="Submit"/></p>
+}
