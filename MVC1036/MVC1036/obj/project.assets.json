@@ -8,23 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Amirrudin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Amirr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amirrudin\\Documents\\Projects\\AdvancedProgramming\\MVC1036\\MVC1036\\MVC1036.csproj",
+      "projectUniqueName": "C:\\Users\\Amirr\\Documents\\Projects\\AdvancedProgramming\\MVC1036\\MVC1036\\MVC1036.csproj",
       "projectName": "MVC1036",
-      "projectPath": "C:\\Users\\Amirrudin\\Documents\\Projects\\AdvancedProgramming\\MVC1036\\MVC1036\\MVC1036.csproj",
-      "packagesPath": "C:\\Users\\Amirrudin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amirrudin\\Documents\\Projects\\AdvancedProgramming\\MVC1036\\MVC1036\\obj\\",
+      "projectPath": "C:\\Users\\Amirr\\Documents\\Projects\\AdvancedProgramming\\MVC1036\\MVC1036\\MVC1036.csproj",
+      "packagesPath": "C:\\Users\\Amirr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amirr\\Documents\\Projects\\AdvancedProgramming\\MVC1036\\MVC1036\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Amirrudin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amirr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

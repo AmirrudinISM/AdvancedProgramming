@@ -10,12 +10,22 @@ namespace MVC1036.Models {
             set;
         }
 
+        public string Gender {
+            get;
+            set;
+        }
+
         public double Weight {
             get;
             set;
         }
 
         public double Height {
+            get;
+            set;
+        }
+
+        public bool Smoking {
             get;
             set;
         }
@@ -28,6 +38,10 @@ namespace MVC1036.Models {
         public double Bmi {
             get {
                 return Weight / Math.Pow(Height, 2);
+            }
+
+            set {
+
             }
             
         }
@@ -44,9 +58,61 @@ namespace MVC1036.Models {
                     return "Overweight";
                 }
                 else {
-                    return "Oberse";
+                    return "Obese";
                 }
             }
+
+            set {
+
+            }
         }
+    }
+
+    public class Employee {
+        public int EmpId {
+            get;
+            set;
+        }
+
+        public string Name {
+            get;
+            set;
+        }
+
+        public string Gender {
+            get;
+            set;
+        }
+
+        public string Position {
+            get;
+            set;
+        }
+
+        public DateTime StartDate {
+            get;
+            set;
+        }
+
+        public string Campus {
+            get;
+            set;
+        }
+
+        public double Salary {
+            get;
+            set;
+        }
+
+        public double Deduction {
+            get;
+            set;
+        }
+
+        public double NetSalary {
+            get;
+            set;
+        }
+
     }
 }

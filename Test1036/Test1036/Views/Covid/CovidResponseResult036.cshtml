@@ -1,0 +1,43 @@
+﻿@model Test1036.Models.CovidDiagnosis
+<h1>Covid-19 Advisory</h1>
+<p>Name: @Model.Name</p>
+<p>Phone number: @Model.PhoneNumber</p>
+<b>Criteria:</b>
+<p>Fever: @Model.Fever</p>
+<p>Dry cough: @Model.DryCough</p>
+<p>Breathing Difficulty: @Model.BreathingDifficulty</p>
+<p>Person under investigation: @Model.PersonUnderInvestigation</p>
+<p>Close contact: @Model.CloseContact</p>
+<p>Risk level: @Model.DetermineRiskLevel</p>
+
+@if (@Model.DetermineRiskLevel == "High")
+{
+    <b>Step 1</b>
+    <ul>
+        <li>Do not go to hospital</li>
+        <li>Avoid perform handshake to anybody. </li>
+        <li>Self-isolate.</li>
+    </ul>
+    <b>Step 2</b>
+    <ul>
+        <li>Call KKM COVID-19 hotline 0388810200 or your nearest District Health Office (DHO)</li>
+        <li>Your details will be passed on to an authorised Public Health Person. </li>
+        <li>Arrangement will be made to get yourself tested for SARS-COV2 that caused COVID-19.</li>
+    </ul>
+}
+else if (@Model.DetermineRiskLevel == "Medium")
+{
+    <ul>
+        <li>Stay safe.</li>
+        <li>Wash your hands often with soap and water. </li>
+        <li>If necessary, go to the doctor.</li>
+    </ul>
+}
+else if (@Model.DetermineRiskLevel == "Low")
+{
+    <ul>
+        <li>Stay safe. You do not have any COVID-19 symptom.</li>
+        <li>Wash your hands often with soap and water </li>
+       
+    </ul>
+}
