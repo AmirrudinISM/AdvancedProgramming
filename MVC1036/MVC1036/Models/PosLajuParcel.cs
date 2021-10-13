@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVC1036.Models {
     public class PosLajuParcel {
+        [Display(Name = "Date & Time")]
         public DateTime ParcelDateTime {
             get {
                 return DateTime.Now;
@@ -16,6 +17,13 @@ namespace MVC1036.Models {
             }
         }
 
+        [Display(Name = "Date & Time")]
+        public DateTime ViewDateTime {
+            get;
+            set;
+        }
+
+        [Display(Name = "Parcel ID")]
         public string ParcelId {
             get {
                 string hexTicks = DateTime.Now.Ticks.ToString("X");
@@ -26,57 +34,82 @@ namespace MVC1036.Models {
 
             }
         }
+
+        [Display(Name = "Parcel ID")]
+        public string ViewId {
+            get;
+            set;
+        }
         
         [Required]
+        [Display(Name = "Sender Name")]
         public string SenderName { 
             get; 
             set; 
         }
+
         [Required]
+        [Display(Name = "Sender Address")]
         public string SenderAddress {
             get;
             set;
         }
+
         [Required]
+        [Display(Name = "Sender Phone")]
         public string SenderPhone {
             get;
             set;
         }
+
+        [Display(Name = "Sender Email")]
         public string SenderEmail {
             get;
             set;
         }
         [Required]
+        [Display(Name = "Receiver Name")]
         public string ReceiverName {
             get;
             set;
         }
+
         [Required]
+        [Display(Name = "Receiver Address")]
         public string ReceiverAddress {
             get;
             set;
         }
+
         [Required]
+        [Display(Name = "Receiver Phone")]
         public string ReceiverPhone {
             get;
             set;
         }
+
+        [Display(Name = "Receiver Email")]
         public string ReceiverEmail {
             get;
             set;
         }
 
         [Required]
+        [Display(Name = "Weight")]
         public int IndexWeight {
             get;
             set;
         }
+
         [Required]
+        [Display(Name = "Zone")]
         public int IndexZone {
             get;
             set;
         }
-        [DisplayFormat(DataFormatString ="{0:n2}")]
+
+        [DisplayFormat(DataFormatString ="{0:c2}")]
+        [Display(Name = "Paid Amount")]
         public double Amount {
             get {
                 return rates[IndexWeight, IndexZone];
@@ -106,7 +139,7 @@ namespace MVC1036.Models {
 
             }
         }
-
+        [Display(Name = "Zone")]
         public IDictionary<int, string> DictZone {
             get {
                 return new Dictionary<int, string>() {

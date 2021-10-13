@@ -1,16 +1,16 @@
 ﻿@model MVC1036.Models.PosLajuParcel
 <head>
     <title>Pos Laju Invoice</title>
-    <link href="~/css/PosLaju.css" rel="stylesheet"/>
+    <link href="~/css/PosLaju.css" rel="stylesheet" />
 </head>
 <body>
     <p>
         <label>Parcel Id:</label>
-        @Html.DisplayFor(x => x.ParcelId)
+        @Html.DisplayFor(x => x.ViewId)
     </p>
     <p>
         <label>Date and Time:</label>
-        @Html.DisplayFor(x => x.ParcelDateTime)
+        @Html.DisplayFor(x => x.ViewDateTime)
     </p>
 
     <h5>Sender Information</h5>
@@ -60,5 +60,7 @@
         <label>Amount:</label>
         @Html.DisplayFor(x => x.Amount)
     </p>
-    <p>@Html.ActionLink("Create", "ParcelDelivery")</p>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </body>
