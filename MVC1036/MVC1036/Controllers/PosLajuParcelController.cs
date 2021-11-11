@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using MVC1036.Models;
+using MVC1036.MailSettings;
 
 namespace MVC1036.Controllers {
     public class PosLajuParcelController : Controller {
@@ -183,6 +184,39 @@ namespace MVC1036.Controllers {
             return dbList;
 
         }
-        
+
+        public IActionResult SearchIndex(string searchString = "") {
+            IList<PosLajuParcel> dbList = GetDbList();
+            var result = dbList.Where(x => x.ViewId.ToLower().Contains(searchString.ToLower()) || x.SenderName.ToLower().Contains(searchString.ToLower())).OrderBy(x => x.SenderName).ThenByDescending(x => x.ViewDateTime);
+            return View("Index", result);
+        }
+
+        public IActionResult SendMail(string id) {
+            IList<PosLajuParcel> dbList = GetDbList();
+            var result = dbList.First(x => x.ViewId == id);
+            var subject = "Parcel Information " + result.ViewId;
+            var body = "Parcel id: " + result.ViewId + "<br>" +
+                "Date and time: " + result.ViewDateTime + "<br>" +
+                "Sender name: "+ result. SenderName + " <br> " +
+                "Receiver name: "+ result.ReceiverName + " <br> " +
+                "Receiver address: " + result.ReceiverAddress + "<br>" +
+                "Receiver phone: " + result.ReceiverPhone + "<br>" +
+                "Weight: " + result.DictWeight[result.IndexWeight] + "<br>" +
+                "Zone: " + result.DictZone[result.IndexZone] + "<br>" +
+                "Amount: "+ result.Amount.ToString("c2");
+            
+            var mail = new Mail(configuration);
+
+            if (mail.Send(configuration["Gmail:Username"], result.SenderEmail, subject, body)) {
+                ViewBag.Message = "Mail successfully sent to " + result.SenderEmail;
+                ViewBag.Body = body;
+            }
+            else {
+                ViewBag.Message = "Sent Mail Failed";
+                ViewBag.Body = "";
+            }
+            return View(result);
+        }
+
     }
 }

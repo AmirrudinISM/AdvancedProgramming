@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Test2036.Models.Employee036>
+
+<h3>Employee Salary & Charity Deduction</h3>
+
+<table border="1" width="100%">
+    <tr>
+        <th>#</th>
+        <th>Employee Id</th>
+        <th>Name</th>
+
+        <th>Position</th>
+
+        <th>Campus</th>
+        <th>Salary</th>
+        <th>Deduction</th>
+    </tr>
+    @{int row = 1; }
+    @foreach (var employee in Model) {
+        <tr>
+            <td>@row</td>
+            <td>@employee.EmpId</td>
+            <td>@employee.Name</td>
+
+            <td>@employee.Position</td>
+
+            <td>@employee.Campus</td>
+            <td>@employee.Salary.ToString("c")</td>
+            <td>@employee.Deduction.ToString("c")</td>
+        </tr>
+        row++;
+    }
+</table>

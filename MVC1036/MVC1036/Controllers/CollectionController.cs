@@ -713,7 +713,7 @@ namespace MVC1036.Controllers {
                 NetSalary = x.Salary - (x.Salary * 0.09) 
             }).Where(x => x.Deduction >= 1000).OrderBy(x => x.Name);
             
-            return View(result2);
+            return View(result1);
         }
     }
 }

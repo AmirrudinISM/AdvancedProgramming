@@ -1,0 +1,18 @@
+﻿<h3>Body Mass Index Table</h3>
+
+<table width="100%" border="1">
+    <tr align="center" style="font-weight:bold">
+        <td>Weight/Height</td>
+        @for(int i = 0; i < ViewBag.Height.Length; i++) {
+                <td>@ViewBag.Height[i].ToString("n2")</td>
+         }
+    </tr>
+    @for(int i = 0; i < ViewBag.Weight.Length; i++) {
+        <tr align="center">
+            <td style="font-weight:bold">@ViewBag.Weight[i]</td>
+            @for(int j = 0; j < ViewBag.Height.Length; j++) {
+                    <td>@ViewBag.bmi[j,i]</td>
+                }
+        </tr>
+            }
+</table>

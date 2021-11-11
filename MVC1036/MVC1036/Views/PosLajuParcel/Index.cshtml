@@ -7,6 +7,16 @@
     <body>
         <h5>Parcel List</h5>
         <p>@Html.ActionLink("Create", "ParcelDelivery")</p>
+        
+        @using (Html.BeginForm("SearchIndex", "PosLajuParcel", FormMethod.Get)) {
+            <p>
+                <label>Search by parcel id or sender name:</label>
+                @Html.TextBox("SearchString")
+                <input type="submit" value="Search" />
+                @Html.ActionLink("Back to Full List", "Index")
+            </p>
+            } 
+        
         <table class="table">
             <tr>
                 <th>@Html.DisplayNameFor(x => x.ViewId)</th>
@@ -33,9 +43,10 @@
                     <td>@Html.DisplayFor(y => x.DictWeight[x.IndexWeight])</td>
                     <td>@Html.DisplayFor(y => x.Amount)</td>
                     <td>
-                        @Html.ActionLink("Details", "Details", new { id = x.ViewId}) | 
-                        @Html.ActionLink("Edit", "Edit", new { id = x.ViewId}) | 
-                        @Html.ActionLink("Delete", "Delete", new { id = x.ViewId})
+                        @Html.ActionLink("Details", "Details", new { id = x.ViewId }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = x.ViewId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = x.ViewId }) |
+                        @Html.ActionLink("Mail", "SendMail", new { id = x.ViewId })
                     </td>
                 </tr>
             }
