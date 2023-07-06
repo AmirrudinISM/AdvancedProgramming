@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using MVC1036.Models;
 using MVC1036.MailSettings;
+using System.Diagnostics;
 
 namespace MVC1036.Controllers {
     public class PosLajuParcelController : Controller {
@@ -68,8 +69,8 @@ namespace MVC1036.Controllers {
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception e) {
-                    
+                catch (SqlException e) {
+                    Console.WriteLine(e.ToString());
                     return View(parcel);
                 }
                 finally {
@@ -153,6 +154,7 @@ namespace MVC1036.Controllers {
             SqlConnection conn = new SqlConnection(configuration.GetConnectionString("ParcelConnStr"));
             string sql = @"SELECT * FROM PosLajuParcels";
             SqlCommand cmd = new SqlCommand(sql, conn);
+            Console.WriteLine("TEST HERE");
 
             try {
                 conn.Open();
@@ -175,7 +177,8 @@ namespace MVC1036.Controllers {
                     });
                 }
             }
-            catch {
+            catch(SqlException e) {
+                Console.WriteLine(e.Message);
                 RedirectToAction("Error");
             }
             finally {

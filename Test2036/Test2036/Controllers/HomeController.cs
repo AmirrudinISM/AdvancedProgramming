@@ -110,6 +110,10 @@ namespace Test2036.Controllers {
             };
 
             ViewBag.Count = listEmployees.Count();
+            ViewBag.HighestSalary = listEmployees.Max(x => x.Salary);
+            ViewBag.LowestSalary = listEmployees.Min(x => x.Salary);
+            ViewBag.AverageSalary = listEmployees.Average(x => x.Salary);
+            ViewBag.AverageSalaryMIIT = listEmployees.Where(x => x.Campus == "MIIT").Average(x => x.Salary);
            
 
             return View(listEmployees);

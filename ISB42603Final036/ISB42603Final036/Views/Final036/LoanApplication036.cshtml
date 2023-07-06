@@ -1,0 +1,48 @@
+﻿@model ISB42603Final036.Models.HousingLoan
+
+<head>
+    <title>Loan Application Form</title>
+</head>
+<body>
+    @using (Html.BeginForm()) {
+        <h5>Loan Application Form</h5>
+
+        <p>
+            <label>@Html.DisplayNameFor(x => x.CustomerID)</label>
+            @Html.TextBoxFor(x => x.CustomerID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CustomerID, "", new { @class = "text-danger" })
+        </p>
+        <p>
+            <label>@Html.DisplayNameFor(x => x.Name)</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+        </p>
+        <p>
+            <label>@Html.DisplayNameFor(x => x.Gender)</label>
+            @Html.TextBoxFor(x => x.Gender, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Gender, "", new { @class = "text-danger" })
+        </p>
+        <p>
+            <label>@Html.DisplayNameFor(x => x.CreditStatus)</label>
+            @Html.TextBoxFor(x => x.CreditStatus, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CreditStatus, "", new { @class = "text-danger" })
+        </p>
+        <p>
+            <label>@Html.DisplayNameFor(x => x.Principal)</label>
+            @Html.TextBoxFor(x => x.Principal, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Principal, "", new { @class = "text-danger" })
+        </p>
+        <p>
+            <label>@Html.DisplayNameFor(x => x.NumberOfYears)</label>
+            @Html.TextBoxFor(x => x.NumberOfYears, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.NumberOfYears, "", new { @class = "text-danger" })
+        </p>
+        <br />
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </p>
+
+
+
+    }
+</body>

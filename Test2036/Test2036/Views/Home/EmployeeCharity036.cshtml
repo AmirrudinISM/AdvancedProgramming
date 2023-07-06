@@ -20,9 +20,7 @@
             <td>@row</td>
             <td>@employee.EmpId</td>
             <td>@employee.Name</td>
-
             <td>@employee.Position</td>
-
             <td>@employee.Campus</td>
             <td>@employee.Salary.ToString("c")</td>
             <td>@employee.Deduction.ToString("c")</td>
@@ -30,3 +28,11 @@
         row++;
     }
 </table>
+
+<ul>
+    <li>Number of employee is @ViewBag.Count</li>
+    <li>Highest salary is @ViewBag.HighestSalary.ToString("c")</li>
+    <li>Lowest salary is @ViewBag.LowestSalary.ToString("c")</li>
+    <li>Average salary is @ViewBag.AverageSalary.ToString("c")</li>
+    <li>Average salary MIIT is @ViewBag.AverageSalaryMIIT.ToString("c")</li>
+</ul>
